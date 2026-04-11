@@ -1,0 +1,8 @@
+{
+  "name": "commonplace",
+  "description": "Long-term memory for AI agents via commonplace CLI — store, search, and recall facts across sessions",
+  "version": "0.1.0",
+  "author": {
+    "name": "Saikat Kumar Dey"
+  }
+}

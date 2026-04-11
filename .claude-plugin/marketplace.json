@@ -1,0 +1,18 @@
+{
+  "name": "commonplace-marketplace",
+  "owner": {
+    "name": "saikatkumardey"
+  },
+  "plugins": [
+    {
+      "name": "commonplace",
+      "description": "Long-term memory for AI agents via commonplace CLI — store, search, and recall facts across sessions",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/saikatkumardey/commonplace-plugin.git"
+      },
+      "homepage": "https://github.com/saikatkumardey/commonplace-plugin"
+    }
+  ]
+}
