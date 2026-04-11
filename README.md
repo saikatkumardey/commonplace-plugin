@@ -1,8 +1,8 @@
 # commonplace-plugin
 
-Claude Code plugin for [commonplace](https://github.com/saikatkumardey/commonplace) — long-term memory for AI agents.
+Every time you start a Claude Code session, it doesn't know what you decided last week. This plugin fixes that.
 
-Teaches Claude Code when and how to use the `commonplace` CLI to store and recall memories across sessions. Also installs session hooks for automatic recall at startup and summarization at shutdown.
+It's a Claude Code plugin for [commonplace](https://github.com/saikatkumardey/commonplace). It teaches Claude when and how to use the `commonplace` CLI, and wires in two session hooks: one that pulls relevant memories when a session starts, and one that saves what happened when it ends.
 
 ## Prerequisites
 
@@ -24,15 +24,15 @@ Then run the setup skill once to install the hooks:
 /commonplace setup
 ```
 
-## What It Does
+## What Gets Installed
 
-Once installed and set up, Claude Code will automatically:
+After setup, Claude Code will automatically:
 
-- **Recall** relevant memories at the start of every session (SessionStart hook)
-- **Store** new facts when it learns preferences, resolves errors, or makes decisions
-- **Summarize** the session using Claude Haiku when it ends, writing a 2-4 bullet summary to `session-log` (Stop hook)
-- **Extract** structured entries from the session transcript into `preferences`, `decisions`, `errors`, and `context` topics automatically
-- **Search** across all memory topics when it needs context from past sessions
+- Recall relevant memories at the start of every session (SessionStart hook)
+- Store new facts when it learns preferences, resolves errors, or makes decisions
+- Summarize the session using Claude Haiku when it ends, writing a 2-4 bullet summary to `session-log` (Stop hook)
+- Extract structured entries from the session transcript into `preferences`, `decisions`, `errors`, and `context` topics
+- Search across all memory topics when it needs context from past sessions
 
 ## Skills
 
@@ -43,7 +43,7 @@ Once installed and set up, Claude Code will automatically:
 
 ## Hooks
 
-The setup skill installs two hooks:
+The setup skill installs two hooks.
 
 **SessionStart** — `hooks/session-start.py`
 Injects recent commonplace entries as additional context at the start of every session. Claude sees your past decisions, preferences, and context before responding to the first message.
@@ -65,5 +65,4 @@ commonplace topics                     # list all topics
 commonplace forget <topic> <search>    # remove entries
 ```
 
-Memories are stored as plain markdown files in `~/.commonplace/` — human-readable and human-editable.
-
+Memories are stored as plain markdown files in `~/.commonplace/`. Human-readable and human-editable.
